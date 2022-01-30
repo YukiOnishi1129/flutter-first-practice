@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/next_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,38 +42,25 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('雄貴のFlutter'),
-        actions: [
-          Icon(Icons.add),
-          Icon(Icons.share)
-        ]
-      ),// appBar: アプリ上部(ヘッダーのようなところ)
+        title: Text('KBOYのFlutter大学'),
+      ),
       body: Center(
-        child:Container (
-          color: Colors.red,
-          height: double.infinity,
-          //child: Column: 縦並びになる
-          //child: Row: 横並びになる
-          child: Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Row(
-              //MainAxisAlignment.center: 上下中央よせ
-              // MainAxisAlignment.start: 上よせ
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text('雄貴の説明はとてもわかりやすい'),
-                Text('↑わかる'),
-                Text('↑しかもカッコ良い')
-              ],
-            ),
-          ),
+        child: ElevatedButton(
+          child: Text('次へ'),
+          onPressed: () {
+            // ここにボタンを押した時に呼ばれるコードを書く
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NextPage()),
+            );
+          },
         ),
-      ),// body: アプリメインエリア
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),// floatingActionButton: アプリ下のfloatボタン
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
