@@ -49,15 +49,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),// appBar: アプリ上部(ヘッダーのようなところ)
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          //MainAxisAlignment.center: 上下中央よせ
+          // MainAxisAlignment.start: 上よせ
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            Text('雄貴の説明はとてもわかりやすい'),
+            Text('↑わかる'),
+            Text('↑しかもカッコ良い')
           ],
         ),
       ),// body: アプリメインエリア
