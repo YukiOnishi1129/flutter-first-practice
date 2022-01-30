@@ -41,27 +41,38 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-      ),
+        title: Text('雄貴のFlutter'),
+        actions: [
+          Icon(Icons.add),
+          Icon(Icons.share)
+        ]
+      ),// appBar: アプリ上部(ヘッダーのようなところ)
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+        child:Container (
+          color: Colors.red,
+          height: double.infinity,
+          //child: Column: 縦並びになる
+          //child: Row: 横並びになる
+          child: Padding(
+            padding: const EdgeInsets.all(32.0),
+            child: Row(
+              //MainAxisAlignment.center: 上下中央よせ
+              // MainAxisAlignment.start: 上よせ
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text('雄貴の説明はとてもわかりやすい'),
+                Text('↑わかる'),
+                Text('↑しかもカッコ良い')
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          ),
         ),
-      ),
+      ),// body: アプリメインエリア
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ),
+      ),// floatingActionButton: アプリ下のfloatボタン
     );
   }
 }
