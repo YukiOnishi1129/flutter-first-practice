@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/next_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,7 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ElevatedButton(
           child: Text('次へ'),
           onPressed: () {
-          //  ここにボタンを押した時に呼ばれるコードを書く
+            // ここにボタンを押した時に呼ばれるコードを書く
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NextPage()),
+            );
           },
         ),
       ),
