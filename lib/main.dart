@@ -48,19 +48,23 @@ class _MyHomePageState extends State<MyHomePage> {
         ]
       ),// appBar: アプリ上部(ヘッダーのようなところ)
       body: Center(
-        //child: Column: 縦並びになる
-        //child: Row: 横並びになる
-        child: Padding(
-          padding: const EdgeInsets.all(32.0),
-          child: Row(
-            //MainAxisAlignment.center: 上下中央よせ
-            // MainAxisAlignment.start: 上よせ
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Text('雄貴の説明はとてもわかりやすい'),
-              Text('↑わかる'),
-              Text('↑しかもカッコ良い')
-            ],
+        child:Container (
+          color: Colors.red,
+          height: double.infinity,
+          //child: Column: 縦並びになる
+          //child: Row: 横並びになる
+          child: Padding(
+            padding: const EdgeInsets.all(32.0),
+            child: Row(
+              //MainAxisAlignment.center: 上下中央よせ
+              // MainAxisAlignment.start: 上よせ
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text('雄貴の説明はとてもわかりやすい'),
+                Text('↑わかる'),
+                Text('↑しかもカッコ良い')
+              ],
+            ),
           ),
         ),
       ),// body: アプリメインエリア
