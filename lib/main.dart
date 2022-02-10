@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // ここにボタンを押した時に呼ばれるコードを書く
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => NextPage()),
+              MaterialPageRoute(builder: (context) => NextPage('KBOY')),
             );
           },
         ),
