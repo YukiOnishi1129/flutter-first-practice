@@ -45,21 +45,22 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('KBOYのFlutter大学'),
       ),
       body: Center(
-        child: ElevatedButton(
-          child: Text('次へ'),
-          onPressed: () {
-            // ここにボタンを押した時に呼ばれるコードを書く
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NextPage('KBOY')),
-            );
-          },
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Column(
+          children:[
+            Image.network(
+                'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+            ElevatedButton(
+              child: Text('次へ'),
+              onPressed: () {
+                // ここにボタンを押した時に呼ばれるコードを書く
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NextPage('KBOY')),
+                );
+              },
+            ),
+          ],
+        )
       ),
     );
   }
