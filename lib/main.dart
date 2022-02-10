@@ -38,25 +38,49 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  // final myFocusNode = FocusNode();
+
+  String name = '';
+
+  final myController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('KBOYのFlutter大学'),
       ),
-      body: Center(
+      body: Container(
+        width: double.infinity,
         child: Column(
-          children:[
-            Container(
-              width: double.infinity,
-              child: Text('KBOYさん',
-              textAlign: TextAlign.center,
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                hintText: '名前',
               ),
+              onChanged: (text) {
+              //  TODO: ここで取得したtextを使う
+                name = text;
+              }
             ),
-            Text('ジーコさん')
-          ],
+            TextField(
+              controller: myController,
+              decoration: InputDecoration(
+                hintText: '趣味',
+              )
+              // focusNode: myFocusNode,
+            ),
+            ElevatedButton(
+              child: Text('新規登録'),
+              onPressed: () {
+              //  TODO: 新規登録
+                final hobbyText = myController.text;
+              //   myFocusNode.requestFocus();
+              },
+            ),
+          ]
         )
-      ),
+      )
     );
   }
 }
